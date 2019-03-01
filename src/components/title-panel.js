@@ -25,9 +25,6 @@ export default ({ children }) => (
         css={css`
           background-color: #ff8a7d;
           padding: 5rem;
-          display: inline-block;
-          width: 50vw;
-          height: 70vw;
         `}
       >
         <Link to="/">

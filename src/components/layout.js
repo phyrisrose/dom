@@ -3,6 +3,7 @@ import { rhythm } from '../utils/typography'
 import { css } from '@emotion/core'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import TitlePanel from './title-panel'
+import Introduction from './introduction'
 
 export default ({ children }) => (
   <StaticQuery
@@ -16,20 +17,18 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <div>
+      <main
+        css={css`
+          display: grid;
+          grid-template-columns: 45% 50%;
+          grid-template-rows: 60vw;
+          grid-column-gap: 15px;
+          grid-row-gap: 15px;
+        `}
+      >
         <TitlePanel>Hello</TitlePanel>
-        <section
-          css={css`
-            width: 45vw;
-            display: inline-block;
-            padding: ${rhythm(2)};
-            padding-top: ${rhythm(1.5)};
-          `}
-        >
-          <div>You have landed</div>
-          {children}
-        </section>
-      </div>
+        <Introduction />
+      </main>
     )}
   />
 )
